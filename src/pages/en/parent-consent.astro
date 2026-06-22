@@ -1,7 +1,7 @@
 ---
 import Layout from "~/components/layout.astro";
 import { getLangFromUrl, useTranslations } from "~/utils/i18n";
-import { ParentConsentForm } from "~/components/parent-form"; 
+import { ParentConsentForm } from "~/components/parent-consent"; 
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations("apply", lang);
