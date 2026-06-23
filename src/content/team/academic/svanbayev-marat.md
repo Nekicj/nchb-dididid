@@ -10,18 +10,16 @@ achievements:
 name_en: "Marat Svanbayev"
 name_kz: "Сванбаев Марат"
 
-position_en: "Jury Member and Problem Setter"
-position_kz: "Қазылар алқасының мүшесі және тапсырма құрастырушы"
+position_en: "Member of the Academic Committee"
+position_kz: "Академиялық комитет мүшесі"
 
 achievements_en:
   [
-    "Jury member and problem setter for NChB",
     "CIS Physics Olympiad: bronze medal",
     "NChB (2024): winner",
   ]
 achievements_kz:
   [
-    "NChB қазылар алқасының мүшесі және тапсырма құрастырушысы",
     "Физика бойынша ТМД олимпиадасы: қола медаль",
     "NChB (2024): жеңімпаз",
   ]

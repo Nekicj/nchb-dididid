@@ -10,18 +10,16 @@ achievements:
 name_en: "Anuar Khabi"
 name_kz: "Хаби Ануар"
 
-position_en: "Jury Member and Problem Setter"
-position_kz: "Қазылар алқасының мүшесі және тапсырма құрастырушы"
+position_en: "Member of the Academic Committee"
+position_kz: "Академиялық комитет мүшесі"
 
 achievements_en:
   [
-    "Jury member and problem setter for NChB",
     "Republican Biology Olympiad: gold and silver medals",
     "RKNP in Informatics: silver medal",
   ]
 achievements_kz:
   [
-    "NChB қазылар алқасының мүшесі және тапсырма құрастырушысы",
     "Биология бойынша республикалық олимпиада: алтын және күміс медальдар",
     "Информатикадан РКНП: күміс медаль",
   ]

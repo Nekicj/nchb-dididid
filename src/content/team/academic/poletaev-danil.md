@@ -10,18 +10,16 @@ achievements:
 name_en: "Danil Poletayev"
 name_kz: "Полетаев Данил"
 
-position_en: "Jury Member and Problem Setter"
-position_kz: "Қазылар алқасының мүшесі және тапсырма құрастырушы"
+position_en: "Member of the Academic Committee"
+position_kz: "Академиялық комитет мүшесі"
 
 achievements_en:
   [
-    "Jury member and problem setter for NChB",
     "Mendeleev International Chemistry Olympiad (2026): bronze medal",
     "Republican Olympiad (2026): gold medal",
   ]
 achievements_kz:
   [
-    "NChB қазылар алқасының мүшесі және тапсырма құрастырушысы",
     "Халықаралық Менделеев олимпиадасы (2026): қола медаль",
     "Республикалық олимпиада (2026): алтын медаль",
   ]

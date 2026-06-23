@@ -3,7 +3,6 @@ name: "Крысанов Никита"
 position: "Член академического комитета"
 achievements:
   [
-    "Составитель задач для NChB",
     "Аспирант физического факультета МГУ имени М. В. Ломоносова",
     "Всероссийская олимпиада школьников по химии: абсолютный победитель",
     "Международная Менделеевская олимпиада по химии: золотая медаль",
@@ -13,12 +12,11 @@ achievements:
 name_en: "Nikita Krysanov"
 name_kz: "Крысанов Никита"
 
-position_en: "Problem Setter"
-position_kz: "Тапсырма құрастырушы"
+position_en: "Member of the Academic Committee"
+position_kz: "Академиялық комитет мүшесі"
 
 achievements_en:
   [
-    "Problem setter for NChB",
     "PhD student at the Faculty of Physics, Lomonosov Moscow State University",
     "All-Russian School Olympiad in Chemistry: absolute winner",
     "Mendeleev International Chemistry Olympiad: gold medal",
@@ -26,7 +24,6 @@ achievements_en:
   ]
 achievements_kz:
   [
-    "NChB тапсырма құрастырушысы",
     "М. В. Ломоносов атындағы Мәскеу мемлекеттік университеті физика факультетінің аспиранты",
     "Химиядан бүкілресейлік мектеп олимпиадасы: абсолютті жеңімпаз",
     "Халықаралық Менделеев олимпиадасы (химия): алтын медаль",
