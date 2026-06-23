@@ -4,6 +4,7 @@ export function RegisterForm({ lang }: { lang: any }) {
     const [hasLeader, setHasLeader] = useState('yes');
     const [showMember4, setShowMember4] = useState(false);
     const [isSubmitted, setIsSubmitted] = useState(false);
+    const [league, setLeague] = useState('junior');
 
     const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -65,7 +66,7 @@ export function RegisterForm({ lang }: { lang: any }) {
         );
     }
 
-    const inputCls = "w-full h-11 border border-neutral-200 rounded-lg px-3 text-sm bg-white text-neutral-900 outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all placeholder:text-neutral-400";
+    const inputCls = "w-full h-11 border border-neutral-200 rounded-lg px-3 text-sm bg-white text-neutral-900 outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all placeholder:text-neutral-400";
     const labelCls = "block text-xs font-medium text-neutral-500 mb-1.5 uppercase tracking-wide";
     const sectionTitle = "text-xs font-semibold text-neutral-400 uppercase tracking-widest mb-4 pb-2 border-b border-neutral-100";
 
@@ -81,45 +82,98 @@ export function RegisterForm({ lang }: { lang: any }) {
         prefix: string;
         optional?: boolean;
         extra?: React.ReactNode;
-    }) => (
-        <div className="border border-neutral-100 rounded-xl p-5 space-y-4">
-            <div className="flex items-center gap-2">
-                <span className="text-sm font-semibold text-neutral-800">{title}</span>
-                {badge && (
-                    <span className="text-xs bg-neutral-100 text-neutral-500 rounded-full px-2.5 py-0.5 font-medium">{badge}</span>
-                )}
-                {extra}
+    }) => {
+        const validateGrade = (e: React.ChangeEvent<HTMLInputElement>) => {
+            const val = parseInt(e.target.value);
+            if (league === 'junior' && val > 9) {
+                e.target.setCustomValidity('Для юниоров класс не может быть больше 9');
+            } else if (val < 1) {
+                e.target.setCustomValidity('Класс не может быть меньше 1');
+            } else {
+                e.target.setCustomValidity('');
+            }
+        };
+
+        return (
+            <div className="border border-neutral-100 rounded-xl p-5 space-y-4">
+                <div className="flex items-center gap-2">
+                    <span className="text-sm font-semibold text-neutral-800">{title}</span>
+                    {badge && (
+                        <span className="text-xs bg-neutral-100 text-neutral-500 rounded-full px-2.5 py-0.5 font-medium">{badge}</span>
+                    )}
+                    {extra}
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    <div>
+                        <label className={labelCls}>ФИО {!optional && <span className="text-red-400">*</span>}</label>
+                        <input
+                            name={`${prefix}Name`}
+                            type="text"
+                            required={!optional}
+                            className={inputCls}
+                            placeholder="Иванов Иван Иванович"
+                        />
+                    </div>
+                    <div>
+                        <label className={labelCls}>Школа {!optional && <span className="text-red-400">*</span>}</label>
+                        <input
+                            name={`${prefix}School`}
+                            type="text"
+                            required={!optional}
+                            className={inputCls}
+                            placeholder="Название школы"
+                        />
+                    </div>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                    <div>
+                        <label className={labelCls}>
+                            Класс {!optional && <span className="text-red-400">*</span>}
+                            {league === 'junior' && (
+                                <span className="ml-1 normal-case text-neutral-400">(макс. 9)</span>
+                            )}
+                        </label>
+                        <input
+                            name={`${prefix}Grade`}
+                            type="number"
+                            min="1"
+                            max={league === 'junior' ? 9 : 11}
+                            required={!optional}
+                            onChange={validateGrade}
+                            onInput={validateGrade}
+                            className={inputCls}
+                            placeholder={league === 'junior' ? '1–9' : '1–11'}
+                        />
+                    </div>
+                    <div>
+                        <label className={labelCls}>Email {!optional && <span className="text-red-400">*</span>}</label>
+                        <input
+                            name={`${prefix}Email`}
+                            type="email"
+                            required={!optional}
+                            className={inputCls}
+                            placeholder="email@example.com"
+                        />
+                    </div>
+                    <div>
+                        <label className={labelCls}>Телефон {!optional && <span className="text-red-400">*</span>}</label>
+                        <input
+                            name={`${prefix}Phone`}
+                            type="text"
+                            required={!optional}
+                            className={inputCls}
+                            placeholder="+7 (700) 000-00-00"
+                        />
+                    </div>
+                </div>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                <div>
-                    <label className={labelCls}>ФИО {!optional && <span className="text-red-400">*</span>}</label>
-                    <input name={`${prefix}Name`} type="text" required={!optional} className={inputCls} placeholder="Раиль Чибиряк" />
-                </div>
-                <div>
-                    <label className={labelCls}>Школа {!optional && <span className="text-red-400">*</span>}</label>
-                    <input name={`${prefix}School`} type="text" required={!optional} className={inputCls} placeholder="Название школы" />
-                </div>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-                <div>
-                    <label className={labelCls}>Класс {!optional && <span className="text-red-400">*</span>}</label>
-                    <input name={`${prefix}Grade`} type="text" required={!optional} className={inputCls} placeholder="11" />
-                </div>
-                <div>
-                    <label className={labelCls}>Email {!optional && <span className="text-red-400">*</span>}</label>
-                    <input name={`${prefix}Email`} type="email" required={!optional} className={inputCls} placeholder="email@example.com" />
-                </div>
-                <div>
-                    <label className={labelCls}>Телефон {!optional && <span className="text-red-400">*</span>}</label>
-                    <input name={`${prefix}Phone`} type="text" required={!optional} className={inputCls} placeholder="+7 (700) 000-00-00" />
-                </div>
-            </div>
-        </div>
-    );
+        );
+    };
 
     return (
         <form onSubmit={handleFormSubmit} className="max-w-3xl mx-auto space-y-8 text-neutral-800 bg-white relative z-20">
 
+            {/* Основная информация */}
             <div className="space-y-4">
                 <p className={sectionTitle}>Основная информация</p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -129,7 +183,12 @@ export function RegisterForm({ lang }: { lang: any }) {
                     </div>
                     <div>
                         <label className={labelCls}>Лига <span className="text-red-400">*</span></label>
-                        <select name="league" className={inputCls}>
+                        <select
+                            name="league"
+                            value={league}
+                            onChange={(e) => setLeague(e.target.value)}
+                            className={inputCls}
+                        >
                             <option value="junior">Юниоры (Junior)</option>
                             <option value="senior">Сениоры (Senior)</option>
                         </select>
@@ -158,13 +217,14 @@ export function RegisterForm({ lang }: { lang: any }) {
                 </div>
             </div>
 
+            {/* Руководитель */}
             {hasLeader === 'yes' && (
                 <div className="bg-neutral-50 border border-neutral-100 rounded-xl p-5 space-y-4">
                     <p className={sectionTitle}>Руководитель команды</p>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
                         <div>
                             <label className={labelCls}>ФИО <span className="text-red-400">*</span></label>
-                            <input name="leaderName" type="text" required className={inputCls} placeholder="Рамазан Каповицир" />
+                            <input name="leaderName" type="text" required className={inputCls} placeholder="Иванов Иван Иванович" />
                         </div>
                         <div>
                             <label className={labelCls}>Email <span className="text-red-400">*</span></label>
@@ -178,6 +238,7 @@ export function RegisterForm({ lang }: { lang: any }) {
                 </div>
             )}
 
+            {/* Участники */}
             <div className="space-y-3">
                 <p className={sectionTitle}>Участники</p>
 
@@ -212,16 +273,26 @@ export function RegisterForm({ lang }: { lang: any }) {
                 )}
             </div>
 
+            {/* Согласие */}
             <label className="flex items-start gap-3 cursor-pointer p-4 bg-neutral-50 rounded-xl border border-neutral-100">
-                <input type="checkbox" required className="mt-0.5 w-4 h-4 accent-blue-600 flex-shrink-0" />
+                <input type="checkbox" required className="mt-0.5 w-4 h-4 accent-primary-700 flex-shrink-0" />
                 <span className="text-xs text-neutral-500 leading-relaxed">
-                    Заполняя форму, члены команды подтверждают, что ознакомлены с основным регламентом научных боёв. <span className="text-red-400">*</span>
+                    Заполняя форму, члены команды подтверждают, что ознакомлены с{" "}
+                    <a
+                        href="https://drive.google.com/drive/folders/17srDz95t5X9-t0ZsSPBRFk7F5i7U8F-6?usp=sharing"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="underline text-primary-700 hover:text-primary-900 transition-colors"
+                    >
+                        основным регламентом научных боёв
+                    </a>
+                    . <span className="text-red-400">*</span>
                 </span>
             </label>
 
             <button
                 type="submit"
-                className="w-full h-12 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-sm font-semibold transition-colors"
+                className="w-full h-12 bg-primary-800 hover:bg-primary-900 text-white rounded-xl text-sm font-semibold transition-colors"
             >
                 Зарегистрировать команду
             </button>
