@@ -224,18 +224,62 @@ export function RegisterForm({ lang }: { lang: any }) {
             {hasLeader === 'yes' && (
                 <div className="bg-neutral-50 border border-neutral-100 rounded-xl p-5 space-y-4">
                     <p className={sectionTitle}>Руководитель команды</p>
+
+                    {/* Строка 1: ФИО, Email, Телефон */}
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
                         <div>
                             <label className={labelCls}>ФИО <span className="text-red-400">*</span></label>
-                            <input name="leaderName" type="text" required className={inputCls} placeholder="Иванов Иван Иванович" />
+                            <input
+                                name="leaderName"
+                                type="text"
+                                required
+                                className={inputCls}
+                                placeholder="Иванов Иван Иванович"
+                            />
                         </div>
                         <div>
                             <label className={labelCls}>Email <span className="text-red-400">*</span></label>
-                            <input name="leaderEmail" type="email" required className={inputCls} placeholder="email@example.com" />
+                            <input
+                                name="leaderEmail"
+                                type="email"
+                                required
+                                className={inputCls}
+                                placeholder="email@example.com"
+                            />
                         </div>
                         <div>
                             <label className={labelCls}>Телефон <span className="text-red-400">*</span></label>
-                            <input name="leaderPhone" type="text" required className={inputCls} placeholder="+7 (700) 000-00-00" />
+                            <input
+                                name="leaderPhone"
+                                type="text"
+                                required
+                                className={inputCls}
+                                placeholder="+7 (700) 000-00-00"
+                            />
+                        </div>
+                    </div>
+
+                    {/* Строка 2: Страна, Город */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                        <div>
+                            <label className={labelCls}>Страна <span className="text-red-400">*</span></label>
+                            <input
+                                name="leaderCountry"
+                                type="text"
+                                required
+                                className={inputCls}
+                                placeholder="Казахстан"
+                            />
+                        </div>
+                        <div>
+                            <label className={labelCls}>Город <span className="text-red-400">*</span></label>
+                            <input
+                                name="leaderCity"
+                                type="text"
+                                required
+                                className={inputCls}
+                                placeholder="Алматы"
+                            />
                         </div>
                     </div>
                 </div>
@@ -276,7 +320,7 @@ export function RegisterForm({ lang }: { lang: any }) {
                 )}
             </div>
 
-            {/* Согласие */}
+            {/* Согласие с регламентом */}
             <label className="flex items-start gap-3 cursor-pointer p-4 bg-neutral-50 rounded-xl border border-neutral-100">
                 <input type="checkbox" required className="mt-0.5 w-4 h-4 accent-[#172967] flex-shrink-0" />
                 <span className="text-xs text-neutral-500 leading-relaxed">
@@ -285,11 +329,28 @@ export function RegisterForm({ lang }: { lang: any }) {
                         href="https://drive.google.com/drive/folders/17srDz95t5X9-t0ZsSPBRFk7F5i7U8F-6?usp=sharing"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="underline text-primary-700 hover:text-primary-900 transition-colors"
+                        className="underline text-[#172967] hover:text-[#0f1c4a] transition-colors"
                     >
                         основным регламентом научных боёв
                     </a>
                     . <span className="text-red-400">*</span>
+                </span>
+            </label>
+
+            {/* Согласие на обработку ПД */}
+            <label className="flex items-start gap-3 cursor-pointer p-4 bg-neutral-50 rounded-xl border border-neutral-100">
+                <input type="checkbox" required className="mt-0.5 w-4 h-4 accent-[#172967] flex-shrink-0" />
+                <span className="text-xs text-neutral-500 leading-relaxed">
+                    Даю согласие на сбор, обработку и хранение Персональных Данных в соответствии с Перечнем №03-08/05. С{" "}
+                    <a
+                        href="https://nchb.kz/privacy"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="underline text-[#172967] hover:text-[#0f1c4a] transition-colors"
+                    >
+                        политикой работы с ПД Фонда и перечнем
+                    </a>
+                    {" "}можно ознакомиться на сайте Фонда. <span className="text-red-400">*</span>
                 </span>
             </label>
 
