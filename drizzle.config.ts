@@ -17,5 +17,4 @@ export default {
   dbCredentials: {
     connectionString: DATABASE_URL,
   },
-  tablesFilter: ["airdrop_*"],
 } satisfies Config;
