@@ -15,11 +15,14 @@ export function ParentConsentForm({ lang }: { lang: any }) {
             phoneLabel: "Өкілдің телефоны",
             phonePlaceholder: "+7 (707) 123-4567",
             repCheckboxTitle: "Мен сенімді тұлғамын",
-            repCheckboxHint: "Егер сіз нотариалды сенімхат бойынша ілесіп жүруші/мұғалім болсаңыз, құсбелгіні қойыңыз",
+            repCheckboxHint: "Егер сіз нотариалды сенімхат бойынша ілесіп жүруші/мұғалім болсаңыз, құсбелгініқойыңыз",
             poaLabel: "Нотариалды сенімхаттың нөмірі",
             poaPlaceholder: "Мысалы, №12345-XYZ",
             consent1: "Мен баламның AutoProctor жүйесін пайдалануына және онымен байланысты дербес деректерді өңдеуге келісімімді растаймын.",
             consent2: "Турнир регламентіне сәйкес менің дербес деректерімді жинауға, өңдеуге және сақтауға келісім беремін.",
+            policyPreLink: "Дербес деректерді №03-08/03 Тізбеге сәйкес жинауға, өңдеуге және сақтауға келісім беремін. Қордың ",
+            policyLinkLabel: "ДД-мен жұмыс істеу саясатымен және тізбемен",
+            policyPostLink: " Қордың сайтында танысуға болады.",
             submitBtn: "Келісімді жіберу",
             success: "Келісім сәтті жіберілді және қатысушымен байланыстырылды!",
             error: "Жіберу кезінде қате кетті. Кейінірек қайталап көріңіз.",
@@ -39,6 +42,9 @@ export function ParentConsentForm({ lang }: { lang: any }) {
             poaPlaceholder: "e.g. No.12345-XYZ",
             consent1: "I confirm my consent to the use of the AutoProctor system and the processing of related personal data of my child.",
             consent2: "I consent to the collection, processing, and storage of my personal data in accordance with the tournament regulations.",
+            policyPreLink: "I consent to the collection, processing, and storage of Personal Data in accordance with List No. 03-08/03. The Foundation's ",
+            policyLinkLabel: "PD processing policy and list",
+            policyPostLink: " can be found on the Foundation's website.",
             submitBtn: "Submit consent",
             success: "Consent successfully submitted and linked to the participant!",
             error: "An error occurred during submission. Please try again later.",
@@ -58,6 +64,9 @@ export function ParentConsentForm({ lang }: { lang: any }) {
             poaPlaceholder: "Например, №12345-XYZ",
             consent1: "Я подтверждаю согласие на использование системы AutoProctor и обработку связанных персональных данных моего ребёнка.",
             consent2: "Даю согласие на сбор, обработку и хранение моих персональных данных в соответствии с регламентом турнира.",
+            policyPreLink: "Даю согласие на сбор, обработку и хранение Персональных Данных в соответствии с Перечнем №03-08/03. С ",
+            policyLinkLabel: "политикой работы с ПД Фонда и перечнем",
+            policyPostLink: " можно ознакомиться на сайте Фонда.",
             submitBtn: "Отправить согласие",
             success: "Согласие успешно отправлено и связано с участником!",
             error: "Ошибка при отправке. Пожалуйста, попробуйте позже.",
@@ -206,6 +215,22 @@ export function ParentConsentForm({ lang }: { lang: any }) {
                         <input type="checkbox" required className="mt-0.5 w-4 h-4 accent-blue-600 flex-shrink-0" />
                         <span className="text-xs text-neutral-500 leading-relaxed">
                             {t.consent2} <span className="text-red-400">*</span>
+                        </span>
+                    </label>
+
+                    <label className="flex items-start gap-3 cursor-pointer">
+                        <input type="checkbox" required className="mt-0.5 w-4 h-4 accent-blue-600 flex-shrink-0" />
+                        <span className="text-xs text-neutral-500 leading-relaxed">
+                            {t.policyPreLink}
+                            <a 
+                                href="https://nchb.kz/privacy" 
+                                target="_blank" 
+                                rel="noopener noreferrer" 
+                                className="text-blue-600 underline hover:text-blue-800 transition-colors inline-block mx-0.5"
+                            >
+                                {t.policyLinkLabel}
+                            </a>
+                            {t.policyPostLink} <span className="text-red-400">*</span>
                         </span>
                     </label>
                 </div>
