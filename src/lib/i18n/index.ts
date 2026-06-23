@@ -12,7 +12,6 @@ export const enHome = {
     "register.now": "Register",
     "join.competition.description":
         "The qualifier runs on July 3rd, 2026, online, with the final held on August 3-7, 2026 at International IT University in Almaty.",
-
     "about.competition": "ABOUT THE COMPETITION",
     "about.competition.description":
         "NChB combines a unique format of team competitions for school students in solving Olympiad chemistry problems. The entire tournament is organized exclusively by high school seniors or college freshmen.",
@@ -40,10 +39,10 @@ export const enHome = {
     "strategy.description":
         "For victory, teams must build proper tactics and strategies. Only with them can one defeat a more academically powerful team",
     "learn.compete.win": "LEARN. COMPETE. WIN.",
-    'learn.compete.win.quote':
+    "learn.compete.win.quote":
         '"A mathematician may say anything he pleases, but a chemist must be at least partially sane."',
     "learn.compete.win.quote.author": "J.Williard Gibbs",
-    'learn.compete.win.description':
+    "learn.compete.win.description":
         "\"At NChB, every challenge is an opportunity—an opportunity to exceed expectations, to break out of traditional learning, and to celebrate the true delight of discovery. Here, we don't just solve equations; we gradually unveil the mysteries of the universe, theorem by theorem.\"",
     "past.tournaments": "Past Tournaments",
     "photo4.caption": "The first Chemical Battles in Central Asia were held at Satbayev University from July 4-8. The photo features many legends of school chemistry in Kazakhstan!",
@@ -79,7 +78,7 @@ export const ruHome = {
     "participation.stages.registration":
         "Регистрация открывается 22 июня 2026 года в 00:00 и закрывается 2 июля 2026 года в 20:00 (время г. Алматы, UTC+5)",
     "participation.stages.online":
-        `Отборочный онлайн-этап пройдет 3 июля 2026 года с 11:00 до 13:45 (время г. Алматы, UTC+5) на платформе <a href='https://autoproctor.com' class='underline' target='_blank'>autoproctor.com</a>.<br>Инструкции с доступом к платформе будут отправлены всем зарегистрированным участникам ближе к дате.`,
+        "Отборочный онлайн-этап пройдет 3 июля 2026 года с 11:00 до 13:45 (время г. Алматы, UTC+5) на платформе <a href='https://autoproctor.com' class='underline' target='_blank'>autoproctor.com</a>.<br>Инструкции с доступом к платформе будут отправлены всем зарегистрированным участникам ближе к дате.",
     "participation.stages.final":
         "Финальный очный этап состоится 3-7 августа 2026 года в Международном Университете Информационных Технологий в г. Алматы, Республика Казахстан (ул. Манаса 34/1)",
     "tasks": "ЗАДАЧИ",
