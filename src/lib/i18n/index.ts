@@ -31,7 +31,7 @@ export const enHome = {
         "The in-person final will be held on August 3-7, 2026 at International IT University in Almaty, Kazakhstan (34/1 Manas St.).",
     "tasks": "TASKS",
     "tasks.description":
-        "The tournament tasks are compiled by a team from the members of the Kazakhstan national chemistry and math team: awardees of **IChO**, IMO, IJSO, IMChO, and students from MIPT, Harvard, Williams College, and Sheffield University. We strive to take the very best from both classical Olympiads, as well as from the less typical ones like the MIPT LPR Cup.",
+        "The tournament tasks are compiled by a team from the members of the Kazakhstan national chemistry and math team: awardees of IChO, IMO, IJSO, IMChO, and students from MIPT, Harvard, Williams College, and Sheffield University. We strive to take the very best from both classical Olympiads, as well as from the less typical ones like the MIPT LPR Cup.",
     "teamwork": "TEAMWORK",
     "teamwork.description":
         "The format entails mandatory collaborative and effective work of all team members to win. It is primarily the ability to maintain a friendly atmosphere after 6-hour marathons of solving the most complex Olympiad chemistry problems and sensible allocation of duties",

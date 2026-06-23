@@ -157,7 +157,7 @@ export function RegisterForm({ lang }: { lang: ReturnType<typeof getLangFromUrl>
                             type="text"
                             required={!optional}
                             className={inputCls}
-                            placeholder="Иванов Иван Иванович"
+                            placeholder="Равил Чебурек"
                         />
                     </div>
                     <div>
@@ -263,7 +263,7 @@ export function RegisterForm({ lang }: { lang: ReturnType<typeof getLangFromUrl>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
                     <div>
                         <label className={labelCls}>{t("leaderName")} <span className="text-red-400">*</span></label>
-                        <input name="leaderName" type="text" required className={inputCls} placeholder="Иванов Иван Иванович" />
+                        <input name="leaderName" type="text" required className={inputCls} placeholder="Максим Альфедо" />
                     </div>
                     <div>
                         <label className={labelCls}>{t("leaderEmail")} <span className="text-red-400">*</span></label>
