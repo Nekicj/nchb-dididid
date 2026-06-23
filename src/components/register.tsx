@@ -173,7 +173,6 @@ export function RegisterForm({ lang }: { lang: any }) {
     return (
         <form onSubmit={handleFormSubmit} className="max-w-3xl mx-auto space-y-8 text-neutral-800 bg-white relative z-20">
 
-            {/* Основная информация */}
             <div className="space-y-4">
                 <p className={sectionTitle}>Основная информация</p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -220,12 +219,10 @@ export function RegisterForm({ lang }: { lang: any }) {
                 </div>
             </div>
 
-            {/* Руководитель */}
             {hasLeader === 'yes' && (
                 <div className="bg-neutral-50 border border-neutral-100 rounded-xl p-5 space-y-4">
                     <p className={sectionTitle}>Руководитель команды</p>
 
-                    {/* Строка 1: ФИО, Email, Телефон */}
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
                         <div>
                             <label className={labelCls}>ФИО <span className="text-red-400">*</span></label>
@@ -259,7 +256,6 @@ export function RegisterForm({ lang }: { lang: any }) {
                         </div>
                     </div>
 
-                    {/* Строка 2: Страна, Город */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                         <div>
                             <label className={labelCls}>Страна <span className="text-red-400">*</span></label>
@@ -285,7 +281,6 @@ export function RegisterForm({ lang }: { lang: any }) {
                 </div>
             )}
 
-            {/* Участники */}
             <div className="space-y-3">
                 <p className={sectionTitle}>Участники</p>
 
@@ -320,7 +315,6 @@ export function RegisterForm({ lang }: { lang: any }) {
                 )}
             </div>
 
-            {/* Согласие с регламентом */}
             <label className="flex items-start gap-3 cursor-pointer p-4 bg-neutral-50 rounded-xl border border-neutral-100">
                 <input type="checkbox" required className="mt-0.5 w-4 h-4 accent-[#172967] flex-shrink-0" />
                 <span className="text-xs text-neutral-500 leading-relaxed">
@@ -337,7 +331,6 @@ export function RegisterForm({ lang }: { lang: any }) {
                 </span>
             </label>
 
-            {/* Согласие на обработку ПД */}
             <label className="flex items-start gap-3 cursor-pointer p-4 bg-neutral-50 rounded-xl border border-neutral-100">
                 <input type="checkbox" required className="mt-0.5 w-4 h-4 accent-[#172967] flex-shrink-0" />
                 <span className="text-xs text-neutral-500 leading-relaxed">
