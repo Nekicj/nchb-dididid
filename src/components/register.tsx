@@ -8,11 +8,9 @@ export function RegisterForm({ lang }: { lang: any }) {
 
     const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("--- СТАРТ ОТПРАВКИ ---");
     
     const formData = new FormData(e.currentTarget);
     const data = Object.fromEntries(formData.entries());
-    console.log("Данные из формы собраны:", data);
 
     const payload = {
         teamName: data.teamName,
@@ -49,29 +47,20 @@ export function RegisterForm({ lang }: { lang: any }) {
         member3Parent: { parentName: "", parentEmail: "", parentPhone: "", autoproctorConsent: false },
     };
 
-    console.log("Готовый JSON для отправки:", JSON.stringify(payload));
 
     try {
-        console.log("Делаю fetch к /api/form.json...");
         const response = await fetch('/api/form.json', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(payload),
         });
 
-        console.log("Ответ получен. Статус:", response.status);
-
         if (response.ok) {
-            console.log("Сервер ответил ОК! Переключаю состояние на 'isSubmitted = true'");
             setIsSubmitted(true);
         } else {
             const errorText = await response.text();
-            console.error("Сервер вернул ошибку:", errorText);
-            alert("Ошибка сервера: " + errorText);
         }
     } catch (err) {
-        console.error("Критическая ошибка fetch:", err);
-        alert("Ошибка сети. Проверь консоль.");
     }
 };
 

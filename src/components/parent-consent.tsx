@@ -88,10 +88,21 @@ export function ParentConsentForm({ lang }: { lang: any }) {
             poaNumber: isRepresentative ? formData.get('poaNumber') : null,
             lang,
         };
+    
         try {
-            setStatusMessage({ type: 'success', text: t.success });
-            e.currentTarget.reset();
-            setIsRepresentative(false);
+            const response = await fetch('/api/parent-consent.json', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data),
+            });
+        
+            if (response.ok) {
+                setStatusMessage({ type: 'success', text: t.success });
+                e.currentTarget.reset();
+                setIsRepresentative(false);
+            } else {
+                setStatusMessage({ type: 'error', text: t.error });
+            }
         } catch {
             setStatusMessage({ type: 'error', text: t.error });
         }

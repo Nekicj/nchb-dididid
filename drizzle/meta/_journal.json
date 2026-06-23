@@ -8,6 +8,13 @@
       "when": 1760110995229,
       "tag": "0000_perpetual_champions",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1782232193728,
+      "tag": "0001_illegal_wraith",
+      "breakpoints": true
     }
   ]
 }
