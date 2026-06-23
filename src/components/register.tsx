@@ -52,13 +52,13 @@ export function RegisterForm({ lang }: { lang: any }) {
                     <>
                         <h3 className="text-xl font-semibold text-amber-800">Команда зарегистрирована — осталось одно действие!</h3>
                         <p className="text-sm text-neutral-700">
-                            Чтобы завершить регистрацию, родитель или законный представитель каждого участника должен заполнить отдельную форму согласия на AutoProctor.
+                            Чтобы завершить регистрацию, родитель/опекун или доверенное лицо каждого участника должен заполнить отдельную форму согласия на AutoProctor.
                         </p>
                         <p className="text-sm text-neutral-500">
-                            Перешлите ссылку ниже родителям и напомните указать ваш номер телефона или email — так мы свяжем анкеты в базе:
+                            Перешлите ссылку ниже и напомните указать ваш номер телефона или email — так мы свяжем анкеты в базе:
                         </p>
                         <a href={parentFormUrl} className="inline-block bg-amber-600 hover:bg-amber-700 text-white font-semibold py-2.5 px-5 rounded-lg transition-colors text-sm">
-                            Форма родительского согласия →
+                            Форма согласия →
                         </a>
                     </>
                 )}
@@ -320,7 +320,7 @@ export function RegisterForm({ lang }: { lang: any }) {
                 <span className="text-xs text-neutral-500 leading-relaxed">
                     Заполняя форму, члены команды подтверждают, что ознакомлены с{" "}
                     <a
-                        href="https://drive.google.com/drive/folders/17srDz95t5X9-t0ZsSPBRFk7F5i7U8F-6?usp=sharing"
+                        href="https://drive.google.com/drive/folders/17srDz95t5X9-t0ZsSPBRFk7F5i7U8F-6"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="underline text-[#172967] hover:text-[#0f1c4a] transition-colors"
